@@ -1,0 +1,197 @@
+country,alpha_2_code,alpha_3_code,numeric_code,mat_deaths,time_period,no_deaths
+Afghanistan,AF,AFG,4,Maternal deaths (estimated),2020,8698
+Albania,AL,ALB,8,Maternal deaths (estimated),2020,2
+Algeria,DZ,DZA,12,Maternal deaths (estimated),2020,758
+Angola,AO,AGO,24,Maternal deaths (estimated),2020,2914
+Antigua and Barbuda,AG,ATG,28,Maternal deaths (estimated),2020,0
+Argentina,AR,ARG,32,Maternal deaths (estimated),2020,286
+Armenia,AM,ARM,51,Maternal deaths (estimated),2020,10
+Australia,AU,AUS,36,Maternal deaths (estimated),2020,9
+Austria,AT,AUT,40,Maternal deaths (estimated),2020,4
+Azerbaijan,AZ,AZE,31,Maternal deaths (estimated),2020,54
+Bahamas,BS,BHS,44,Maternal deaths (estimated),2020,4
+Bahrain,BH,BHR,48,Maternal deaths (estimated),2020,3
+Bangladesh,BD,BGD,50,Maternal deaths (estimated),2020,3719
+Barbados,BB,BRB,52,Maternal deaths (estimated),2020,1
+Belarus,BY,BLR,112,Maternal deaths (estimated),2020,1
+Belgium,BE,BEL,56,Maternal deaths (estimated),2020,5
+Belize,BZ,BLZ,84,Maternal deaths (estimated),2020,9
+Benin,BJ,BEN,204,Maternal deaths (estimated),2020,2451
+Bhutan,BT,BTN,64,Maternal deaths (estimated),2020,6
+"Bolivia, Plurinational State of",BO,BOL,68,Maternal deaths (estimated),2020,423
+Bolivia,BO,BOL,68,Maternal deaths (estimated),2020,423
+Bosnia and Herzegovina,BA,BIH,70,Maternal deaths (estimated),2020,2
+Botswana,BW,BWA,72,Maternal deaths (estimated),2020,115
+Brazil,BR,BRA,76,Maternal deaths (estimated),2020,2011
+Brunei Darussalam,BN,BRN,96,Maternal deaths (estimated),2020,3
+Brunei,BN,BRN,96,Maternal deaths (estimated),2020,3
+Bulgaria,BG,BGR,100,Maternal deaths (estimated),2020,4
+Burkina Faso,BF,BFA,854,Maternal deaths (estimated),2020,2049
+Burundi,BI,BDI,108,Maternal deaths (estimated),2020,2151
+Cape Verde,CV,CPV,132,Maternal deaths (estimated),2020,4
+Cambodia,KH,KHM,116,Maternal deaths (estimated),2020,711
+Cameroon,CM,CMR,120,Maternal deaths (estimated),2020,4119
+Canada,CA,CAN,124,Maternal deaths (estimated),2020,41
+Central African Republic,CF,CAF,140,Maternal deaths (estimated),2020,1888
+Chad,TD,TCD,148,Maternal deaths (estimated),2020,7764
+Chile,CL,CHL,152,Maternal deaths (estimated),2020,34
+China,CN,CHN,156,Maternal deaths (estimated),2020,2822
+Colombia,CO,COL,170,Maternal deaths (estimated),2020,548
+Comoros,KM,COM,174,Maternal deaths (estimated),2020,52
+Congo,CG,COG,178,Maternal deaths (estimated),2020,503
+Costa Rica,CR,CRI,188,Maternal deaths (estimated),2020,14
+Croatia,HR,HRV,191,Maternal deaths (estimated),2020,2
+Cuba,CU,CUB,192,Maternal deaths (estimated),2020,42
+Cyprus,CY,CYP,196,Maternal deaths (estimated),2020,9
+Czech Republic,CZ,CZE,203,Maternal deaths (estimated),2020,4
+Côte d'Ivoire,CI,CIV,384,Maternal deaths (estimated),2020,4401
+Ivory Coast,CI,CIV,384,Maternal deaths (estimated),2020,4401
+"Korea, Democratic People's Republic of",KP,PRK,408,Maternal deaths (estimated),2020,368
+"Congo, the Democratic Republic of the",CD,COD,180,Maternal deaths (estimated),2020,21511
+Denmark,DK,DNK,208,Maternal deaths (estimated),2020,3
+Djibouti,DJ,DJI,262,Maternal deaths (estimated),2020,56
+Dominican Republic,DO,DOM,214,Maternal deaths (estimated),2020,222
+Ecuador,EC,ECU,218,Maternal deaths (estimated),2020,197
+Egypt,EG,EGY,818,Maternal deaths (estimated),2020,417
+El Salvador,SV,SLV,222,Maternal deaths (estimated),2020,44
+Equatorial Guinea,GQ,GNQ,226,Maternal deaths (estimated),2020,106
+Eritrea,ER,ERI,232,Maternal deaths (estimated),2020,328
+Estonia,EE,EST,233,Maternal deaths (estimated),2020,1
+Swaziland,SZ,SWZ,748,Maternal deaths (estimated),2020,69
+Ethiopia,ET,ETH,231,Maternal deaths (estimated),2020,10246
+Fiji,FJ,FJI,242,Maternal deaths (estimated),2020,7
+Finland,FI,FIN,246,Maternal deaths (estimated),2020,4
+France,FR,FRA,250,Maternal deaths (estimated),2020,54
+Gabon,GA,GAB,266,Maternal deaths (estimated),2020,143
+Gambia,GM,GMB,270,Maternal deaths (estimated),2020,399
+Georgia,GE,GEO,268,Maternal deaths (estimated),2020,14
+Germany,DE,DEU,276,Maternal deaths (estimated),2020,34
+Ghana,GH,GHA,288,Maternal deaths (estimated),2020,2373
+Greece,GR,GRC,300,Maternal deaths (estimated),2020,6
+Grenada,GD,GRD,308,Maternal deaths (estimated),2020,0
+Guatemala,GT,GTM,320,Maternal deaths (estimated),2020,362
+Guinea,GN,GIN,324,Maternal deaths (estimated),2020,2557
+Guinea-Bissau,GW,GNB,624,Maternal deaths (estimated),2020,464
+Guyana,GY,GUY,328,Maternal deaths (estimated),2020,18
+Haiti,HT,HTI,332,Maternal deaths (estimated),2020,950
+Honduras,HN,HND,340,Maternal deaths (estimated),2020,155
+Hungary,HU,HUN,348,Maternal deaths (estimated),2020,14
+Iceland,IS,ISL,352,Maternal deaths (estimated),2020,0
+India,IN,IND,356,Maternal deaths (estimated),2020,23753
+Indonesia,ID,IDN,360,Maternal deaths (estimated),2020,7826
+"Iran, Islamic Republic of",IR,IRN,364,Maternal deaths (estimated),2020,274
+Iraq,IQ,IRQ,368,Maternal deaths (estimated),2020,897
+Ireland,IE,IRL,372,Maternal deaths (estimated),2020,3
+Israel,IL,ISR,376,Maternal deaths (estimated),2020,5
+Italy,IT,ITA,380,Maternal deaths (estimated),2020,19
+Jamaica,JM,JAM,388,Maternal deaths (estimated),2020,33
+Japan,JP,JPN,392,Maternal deaths (estimated),2020,36
+Jordan,JO,JOR,400,Maternal deaths (estimated),2020,100
+Kazakhstan,KZ,KAZ,398,Maternal deaths (estimated),2020,57
+Kenya,KE,KEN,404,Maternal deaths (estimated),2020,7716
+Kiribati,KI,KIR,296,Maternal deaths (estimated),2020,3
+Kuwait,KW,KWT,414,Maternal deaths (estimated),2020,4
+Kyrgyzstan,KG,KGZ,417,Maternal deaths (estimated),2020,81
+Lao People's Democratic Republic,LA,LAO,418,Maternal deaths (estimated),2020,207
+Latvia,LV,LVA,428,Maternal deaths (estimated),2020,3
+Lebanon,LB,LBN,422,Maternal deaths (estimated),2020,18
+Lesotho,LS,LSO,426,Maternal deaths (estimated),2020,334
+Liberia,LR,LBR,430,Maternal deaths (estimated),2020,1050
+Libyan Arab Jamahiriya,LY,LBY,434,Maternal deaths (estimated),2020,88
+Libya,LY,LBY,434,Maternal deaths (estimated),2020,88
+Lithuania,LT,LTU,440,Maternal deaths (estimated),2020,2
+Luxembourg,LU,LUX,442,Maternal deaths (estimated),2020,0
+Madagascar,MG,MDG,450,Maternal deaths (estimated),2020,3465
+Malawi,MW,MWI,454,Maternal deaths (estimated),2020,2452
+Malaysia,MY,MYS,458,Maternal deaths (estimated),2020,108
+Maldives,MV,MDV,462,Maternal deaths (estimated),2020,4
+Mali,ML,MLI,466,Maternal deaths (estimated),2020,3927
+Malta,MT,MLT,470,Maternal deaths (estimated),2020,0
+Mauritania,MR,MRT,478,Maternal deaths (estimated),2020,696
+Mauritius,MU,MUS,480,Maternal deaths (estimated),2020,11
+Mexico,MX,MEX,484,Maternal deaths (estimated),2020,1159
+"Micronesia, Federated States of",FM,FSM,583,Maternal deaths (estimated),2020,1
+Mongolia,MN,MNG,496,Maternal deaths (estimated),2020,29
+Montenegro,ME,MNE,499,Maternal deaths (estimated),2020,0
+Morocco,MA,MAR,504,Maternal deaths (estimated),2020,472
+Mozambique,MZ,MOZ,508,Maternal deaths (estimated),2020,1466
+Myanmar,MM,MMR,104,Maternal deaths (estimated),2020,1658
+Burma,MM,MMR,104,Maternal deaths (estimated),2020,1658
+Namibia,,NAM,516,Maternal deaths (estimated),2020,148
+Nepal,NP,NPL,524,Maternal deaths (estimated),2020,1052
+Netherlands,NL,NLD,528,Maternal deaths (estimated),2020,7
+New Zealand,NZ,NZL,554,Maternal deaths (estimated),2020,4
+Nicaragua,NI,NIC,558,Maternal deaths (estimated),2020,110
+Niger,NE,NER,562,Maternal deaths (estimated),2020,4896
+Nigeria,NG,NGA,566,Maternal deaths (estimated),2020,81747
+"Macedonia, the former Yugoslav Republic of",MK,MKD,807,Maternal deaths (estimated),2020,1
+Norway,NO,NOR,578,Maternal deaths (estimated),2020,1
+Oman,OM,OMN,512,Maternal deaths (estimated),2020,15
+Pakistan,PK,PAK,586,Maternal deaths (estimated),2020,9809
+Panama,PA,PAN,591,Maternal deaths (estimated),2020,38
+Papua New Guinea,PG,PNG,598,Maternal deaths (estimated),2020,485
+Paraguay,PY,PRY,600,Maternal deaths (estimated),2020,99
+Peru,PE,PER,604,Maternal deaths (estimated),2020,406
+Philippines,PH,PHL,608,Maternal deaths (estimated),2020,1935
+Poland,PL,POL,616,Maternal deaths (estimated),2020,7
+Portugal,PT,PRT,620,Maternal deaths (estimated),2020,10
+Puerto Rico,PR,PRI,630,Maternal deaths (estimated),2020,9
+Qatar,QA,QAT,634,Maternal deaths (estimated),2020,2
+"Korea, Republic of",KR,KOR,410,Maternal deaths (estimated),2020,24
+South Korea,KR,KOR,410,Maternal deaths (estimated),2020,24
+"Moldova, Republic of",MD,MDA,498,Maternal deaths (estimated),2020,5
+Romania,RO,ROU,642,Maternal deaths (estimated),2020,20
+Russian Federation,RU,RUS,643,Maternal deaths (estimated),2020,197
+Russia,RU,RUS,643,Maternal deaths (estimated),2020,197
+Rwanda,RW,RWA,646,Maternal deaths (estimated),2020,1033
+Saint Lucia,LC,LCA,662,Maternal deaths (estimated),2020,1
+Saint Vincent and the Grenadines,VC,VCT,670,Maternal deaths (estimated),2020,1
+Saint Vincent & the Grenadines,VC,VCT,670,Maternal deaths (estimated),2020,1
+St. Vincent and the Grenadines,VC,VCT,670,Maternal deaths (estimated),2020,1
+Samoa,WS,WSM,882,Maternal deaths (estimated),2020,4
+Sao Tome and Principe,ST,STP,678,Maternal deaths (estimated),2020,9
+Saudi Arabia,SA,SAU,682,Maternal deaths (estimated),2020,108
+Senegal,SN,SEN,686,Maternal deaths (estimated),2020,1417
+Serbia,RS,SRB,688,Maternal deaths (estimated),2020,7
+Seychelles,SC,SYC,690,Maternal deaths (estimated),2020,0
+Sierra Leone,SL,SLE,694,Maternal deaths (estimated),2020,1165
+Singapore,SG,SGP,702,Maternal deaths (estimated),2020,3
+Slovakia,SK,SVK,703,Maternal deaths (estimated),2020,3
+Slovenia,SI,SVN,705,Maternal deaths (estimated),2020,1
+Solomon Islands,SB,SLB,90,Maternal deaths (estimated),2020,26
+Somalia,SO,SOM,706,Maternal deaths (estimated),2020,4519
+South Africa,ZA,ZAF,710,Maternal deaths (estimated),2020,1516
+South Sudan,SS,SSD,728,Maternal deaths (estimated),2020,3790
+Spain,ES,ESP,724,Maternal deaths (estimated),2020,12
+Sri Lanka,LK,LKA,144,Maternal deaths (estimated),2020,89
+"Palestinian Territory, Occupied",PS,PSE,275,Maternal deaths (estimated),2020,30
+Sudan,SD,SDN,736,Maternal deaths (estimated),2020,4112
+Suriname,SR,SUR,740,Maternal deaths (estimated),2020,11
+Sweden,SE,SWE,752,Maternal deaths (estimated),2020,5
+Switzerland,CH,CHE,756,Maternal deaths (estimated),2020,6
+Syrian Arab Republic,SY,SYR,760,Maternal deaths (estimated),2020,121
+Tajikistan,TJ,TJK,762,Maternal deaths (estimated),2020,44
+Thailand,TH,THA,764,Maternal deaths (estimated),2020,188
+Timor-Leste,TL,TLS,626,Maternal deaths (estimated),2020,67
+Togo,TG,TGO,768,Maternal deaths (estimated),2020,1089
+Tonga,TO,TON,776,Maternal deaths (estimated),2020,3
+Trinidad and Tobago,TT,TTO,780,Maternal deaths (estimated),2020,5
+Tunisia,TN,TUN,788,Maternal deaths (estimated),2020,74
+Turkmenistan,TM,TKM,795,Maternal deaths (estimated),2020,7
+Turkey,TR,TUR,792,Maternal deaths (estimated),2020,219
+Uganda,UG,UGA,800,Maternal deaths (estimated),2020,4700
+Ukraine,UA,UKR,804,Maternal deaths (estimated),2020,56
+United Arab Emirates,AE,ARE,784,Maternal deaths (estimated),2020,9
+United Kingdom,GB,GBR,826,Maternal deaths (estimated),2020,67
+"Tanzania, United Republic of",TZ,TZA,834,Maternal deaths (estimated),2020,5390
+United States,US,USA,840,Maternal deaths (estimated),2020,774
+Uruguay,UY,URY,858,Maternal deaths (estimated),2020,7
+Uzbekistan,UZ,UZB,860,Maternal deaths (estimated),2020,251
+Vanuatu,VU,VUT,548,Maternal deaths (estimated),2020,8
+"Venezuela, Bolivarian Republic of",VE,VEN,862,Maternal deaths (estimated),2020,1208
+Venezuela,VE,VEN,862,Maternal deaths (estimated),2020,1208
+Viet Nam,VN,VNM,704,Maternal deaths (estimated),2020,1849
+Vietnam,VN,VNM,704,Maternal deaths (estimated),2020,1849
+Yemen,YE,YEM,887,Maternal deaths (estimated),2020,1852
+Zambia,ZM,ZMB,894,Maternal deaths (estimated),2020,891
+Zimbabwe,ZW,ZWE,716,Maternal deaths (estimated),2020,1734

@@ -1,0 +1,230 @@
+---
+title: "Unveiling Maternal Health: A Journey Towards Equity"
+author: "Leah Jennings 20422314"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Introduction
+
+In the heart of *global health debates* lies the profound challenge of **maternal mortality**. The undeniable fact that women continue to lose their lives during pregnancy, childbirth, or shortly after delivery underscores the URGENCY of addressing **maternal health inequalities** globally. As we embark on this journey, it is essential to recognise the complex and varied aspects of maternal mortality, influenced by various *societal*, *economic*, and *political* factors. With this dashboard, I aim to unravel the complexities surrounding maternal health, shed light on critical insights, and ***promote transformative change***.
+
+
+## The Story
+### Maternal Deaths: A Global Overview
+I commence my exploration by mapping *maternal mortality rates* across the globe. The visualisation uncovers striking **discrepancies**, highlighting the countries affected by shockingly high maternal death rates, for example, Nigeria and India.
+
+```{r}
+#| label: setup
+#| include: false
+install.packages("tidyverse")
+library(tidyverse)
+
+options(scipen = 999)
+
+unicef_metadata <- read_csv("unicef_metadata.csv")
+unicef_indicator_1 <- read_csv("unicef_indicator_1.csv")
+unicef_indicator_2 <- read_csv("unicef_indicator_2.csv")
+
+data_join <- full_join(unicef_indicator_1, unicef_metadata, by = join_by(country, alpha_2_code, alpha_3_code, numeric_code))
+data_join <- full_join(data_join, unicef_indicator_2, by = join_by(country, alpha_2_code, alpha_3_code, numeric_code))
+
+data_join <- unicef_indicator_1 %>%
+  full_join(unicef_metadata, by = join_by(country, alpha_2_code, alpha_3_code, numeric_code)) %>%
+  full_join(unicef_indicator_2, by = join_by(country, alpha_2_code, alpha_3_code, numeric_code))
+```
+
+```{r}
+install.packages("maps")            
+map_world <- map_data("world")
+
+# Map 1 Maternal Deaths 2020
+data_join_2020 <- data_join %>%
+  filter(year ==2020)
+
+map_data_join_2020 <- full_join(data_join_2020, map_world, by = c("country" = "region"))            
+
+ggplot(map_data_join_2020) + 
+  aes(x = long, y = lat, group = group, fill = no_deaths) +
+  geom_polygon() +
+  scale_fill_gradient(low = "pink", high = "firebrick", na.value = "grey90", name = "Number of Maternal Deaths", limits = c(2, 85000), trans = "log10") +
+  labs(title = "Overview of Maternal Deaths, 2020") +
+  theme(plot.title = element_text(size = 16, face = "bold"))
+```
+
+As the countries get redder, maternal deaths increase. In the heart of Africa, swatches of red ***bleed*** across the map, marking the regions where access to basic healthcare is a distant dream. 
+
+
+This stark reality underscores the importance of implementing **targeted interventions** and **resource allocation** to tackle maternal health inequities. It is scary to see that the countries in red may never get the chance to better their maternal health rates.
+
+The narrative remains consistent when it comes to life expectancy. 
+```{r}
+ggplot(map_data_join_2020) + 
+  aes(x = long, y = lat, group = group, fill = life_exp) +
+  geom_polygon() + 
+  scale_fill_gradient(low = "firebrick", high = "pink", na.value = "grey90", name = "Life Expectancy (years)") + 
+  labs(title = "Overview of Life Expectancy, 2020") + 
+  theme(plot.title = element_text(size = 16, face = "bold"))
+```
+The **darkness** that permeates regions burdened by high maternal death rates paints a similar portrait on the canvas of life expectancy. It is a poignant reminder of the interconnectedness of health outcomes and the imperative of ***addressing underlying systemic issues*** to *uplift communities* and *foster resilience*.
+
+### Legal Frameworks in Place to Support Gender Equality 
+Looking through a different lens, I showcase the proportion of legal frameworks that exist to *promote, monitor, and enforce gender equality* in each country. Through this bar chart depicting the percentage of legal frameworks in place, it is vital to question whether there is a correlation between policy environments and maternal mortality rates. 
+
+
+In some nations, the legal landscape is adorned with a rich tapestry of *statutes*, *policies*, and *constitutional provisions* that champion the **rights** and **dignity** of women. Here, gender equality is not just a lofty ideal, but a tangible reality enshrined in law, where discrimination is met with swift retribution and ***justice knows no gender***. 
+
+``` {r}
+unicef_indicator_1 <- unicef_indicator_1 %>%
+  mutate(percent_range = cut(percent_legal_frameworks, breaks = c(0, 33, 66, 100), labels = c("<33%", "33-66%", ">66%")))
+
+percent_legal_data <- unicef_indicator_1 %>%
+  filter(time_period %in% c(2018, 2020, 2022))
+
+percentage_counts <- percent_legal_data %>%
+  group_by(time_period, percent_range) %>%
+  summarise(count = n()) %>%
+  ungroup()
+
+ggplot(percentage_counts, aes(x = factor(time_period), y = count, fill = percent_range)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = c("<33%" = "firebrick", "33-66%" = "coral", ">66%" = "pink")) +
+  labs(title = str_wrap("Evolution of Legal Frameworks Promoting, Enforcing and Monitoring Gender Equality", width = 50),
+       x = "Year",
+       y = "Number of Countries",
+       fill = "Percentage Range") +
+  theme_minimal() +
+  theme(legend.position = "top", plot.title = element_text(size = 16, face = "bold"))
+
+```
+
+Meanwhile, some countries remain, where legal protections are **inadequate** or **inconsistently applied**, the barriers to gender equality remain stubbornly entrenched, perpetuating cycles of *poverty* and *marginalisation*. Here, the absence of legal safeguards renders women ***vulnerable*** to exploitation, their aspirations stifled by the weight of ***systemic injustice*** and ***cultural inertia***.
+
+This highlights the crucial importance of the role of gender-sensitive legislation in safeguarding maternal health rights. 
+
+### A Closer Look at Maternal Deaths
+Through meticulous analysis, I uncover stark variations in the prevalence of maternal deaths, from countries with ***minimal fatalities*** to those grappling with staggering numbers. Each death range paints a poignant portrait of the *challenges* faced by **mothers** worldwide, underscoring the urgency of targeted interventions to mitigate maternal mortality.
+```{r}
+data_join_filtered <- data_join %>%
+  filter(!is.na(no_deaths))
+
+data_join_filtered %>%
+  mutate(death_range = cut(no_deaths, 
+                           breaks = c(-Inf, 100, 5000, Inf), 
+                           labels = c("Less than 100", "Between 100 and 5,000", "More than 5,000"),
+                           include.lowest = TRUE)) %>%
+  group_by(death_range) %>%
+  summarise(num_countries = n()) %>%
+  filter(!is.na(death_range)) %>%
+  ggplot(aes(x = death_range, y = num_countries, fill = death_range)) +
+  geom_bar(stat = "identity") +
+  labs(title = str_wrap("Maternal Mortality by Country: Breakdown by Death Ranges", width = 50),
+       x = "Maternal Death Ranges",
+       y = "Number of Countries", 
+       fill = "Maternal Death Range") +
+  scale_fill_manual(values = c("Less than 100" = "pink",
+                               "Between 100 and 5,000" = "coral",
+                               "More than 5,000" = "firebrick")) +
+  theme_minimal() + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  theme(legend.title = element_text(hjust = 0.5)) +
+  theme(plot.title = element_text(size = 16, face = "bold"))
+
+```
+Armed with these insights, we are propelled into **ACTION**, advocating for **policy reforms** and **targeted interventions** aimed at reducing maternal mortality rates. By addressing the underlying systemic barriers and inequities, we can pave the way for a future where ***every*** mother receives the care and support she deserves. Through collective effort and unwavering commitment, we endeavor to create a world where maternal mortality is no longer a stark reality but a *distant memory*.
+
+
+The exploration continues with an examination of population dynamics and their influence on maternal health. Utilising the scatter plot, we can effectively examine population trends in conjunction with maternal mortality rates, thereby revealing valuable insights into the ***ever-changing environment*** of maternal health. This visualisation tells the tale of two stories:
+```{r}
+data_join_2020$no_deaths <- as.numeric(as.character(data_join_2020$no_deaths))
+options(scipen = 999)
+data_join_2020 %>%
+  ggplot() + 
+  aes(population, no_deaths, color = no_deaths, size = population) + 
+  geom_point(alpha = 0.7) +
+  scale_color_gradient(name = "Number of Maternal Deaths", low = "lightpink", high = "darkred") +
+  labs(title = "Maternal Deaths vs Population in 2020",
+       x = "Population",
+       y = "Number of Maternal Deaths",
+       size = "Population") +
+  scale_size_continuous(name = "Population (Size of Dots)") +  # Format population axis labels with commas
+  scale_y_continuous(labels = scales::comma) +  # Format number of deaths axis labels with commas
+  theme_minimal() + 
+  theme(plot.title = element_text(size = 16, face = "bold")) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  geom_smooth(method = "lm", se = FALSE, color = "deeppink4")
+
+```
+Firstly, in the *bustling metropolises* of densely populated countries, the burden of maternal mortality looms ***large***, casting a shadow over the aspirations of millions. Here, amidst the urban sprawl and the cacophony of life, the sheer magnitude of the population exacerbates the challenges of providing accessible and quality maternal care. 
+
+
+Secondly, in the *sparsely populated regions*, the visualisation tells a different story - a narrative of **isolation** and **neglect**. Across the lands where populations are sparse and resources are scarce, maternal mortality rates soar as women grapple with the harsh realities of ***geographic barriers*** and ***limited healthcare infrastructure***. This transforms childbirth into a perilous journey fraught with ***uncertainty and peril***. 
+
+### A Tale of Top 5 and Bottom 5 Countries, Based on Maternal Deaths
+The scatter plot before us vividly illustrates the contrasting realities faced by nations grappling with maternal health challenges. Each point on the plot represents a country, with its position determined by the number of maternal deaths recorded. The striking differentiation between the hues of red and pink delineates the top and bottom 5 countries, respectively, offering a poignant visual narrative of maternal mortality disparities. 
+
+```{r}
+highest_deaths <- unicef_indicator_2 %>%
+  arrange(desc(no_deaths)) %>%
+  head(5)
+
+lowest_deaths <- unicef_indicator_2 %>%
+  arrange(no_deaths) %>%
+  head(5)
+
+highest_countries <- highest_deaths$country
+lowest_countries <- lowest_deaths$country
+
+ten_countries <- data_join %>%
+  filter(country %in% c(highest_countries, lowest_countries))
+
+ten_life_exp <- unicef_metadata %>%
+  filter(country %in% ten_countries$country)
+
+ten_life_exp <- ten_life_exp %>%
+  mutate(color_group = ifelse(country %in% highest_countries, "Highest", 
+                              ifelse(country %in% lowest_countries, "Lowest", "Other")),
+         color = ifelse(color_group == "Highest", "firebrick", ifelse(color_group == "Lowest", "hotpink", "black")))
+
+top_bottom_countries <- rbind(mutate(highest_deaths, category = "Top"),
+                              mutate(lowest_deaths, category = "Bottom"))
+ggplot(top_bottom_countries, aes(x = reorder(country, -no_deaths), y = no_deaths, color = category)) +
+  geom_point(size = 3) +
+  geom_text(aes(label = no_deaths), vjust = -0.5, size = 3) +
+  labs(title = strwrap("Comparison of Maternal Deaths Between Top and Bottom 5 Countries", width = 50),
+       x = "Country",
+       y = "Number of Deaths") +
+  scale_color_manual(values = c("Top" = "firebrick", "Bottom" = "hotpink"),
+                     name = "Category",
+                     labels = c("Top 5", "Bottom 5")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), plot.title = element_text(size = 16, face = "bold"))
+
+```
+
+
+As we look at how life expectancy changes over time, we see a clear difference between countries where many mothers **die** during childbirth and those where fewer do.
+```{r}
+ggplot(ten_life_exp, aes(x = year, y = life_exp, color = color_group, group = country)) +
+  geom_line() +
+  labs(title = str_wrap("Evolution of Life Expectancy in the Top and Bottom 5 Countries", width = 50),
+       x = "Year",
+       y = "Life Expectancy",
+       color = "Country Group (By Maternal Deaths") + 
+  scale_color_manual(values = c("Highest" = "firebrick", "Lowest" = "hotpink"),
+                     breaks = c("Highest", "Lowest")) +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"))  
+```
+Life expectancy is a *fundamental measure* of human longevity and well-being. Across the globe, life expectancy serves as a barometer of ***societal progress***, reflecting ***advancements in healthcare***, ***education***, and ***economic development***.
+
+
+Yet, as we navigate the nuances of life expectancy, we are compelled to confront the sobering reality of maternal mortality rates—a metric that speaks to the *profound inequities* and *injustices* that persist in our global health landscape. Here, we bear witness to the *staggering toll* of **maternal deaths**, particularly in regions where access to quality maternal care remains ***elusive*** and ***systemic barriers*** to women's health persist.
+
+## Conclusion
+In conclusion, after weaving together the intricate web of factors surrounding **maternal mortality**, through data-driven insights and narrative exploration, we've journeyed through the complexities of *socio-economic disparities*, *healthcare access*, *legal frameworks*, and *population dynamics* that shape maternal health outcomes worldwide.
+Let us be inspired by the ***resilience of women*** and ***children*** around the world. Let us heed the lessons of the past and chart a course towards a future where maternal deaths are not just reduced, but **eradicated** - a future where every individual, regardless of geography or circumstance, can access the care and support they need to thrive.
+Together, we can chart a course towards a future where maternal mortality is a relic of the past, and **EVERY mother** receives the care and support she deserves.
